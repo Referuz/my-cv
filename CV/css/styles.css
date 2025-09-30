@@ -1,0 +1,223 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+    background-color: lightslategray;
+
+}
+/* Datos personales y perfil */
+.perfil{
+	background-color: darkslategrey;
+	float: left;
+    padding-bottom: 5%;
+    color: wheat;
+}
+.perfil span{
+    color: rgb(176, 140, 77);
+}
+.perfil a{
+    text-decoration: none;
+    color: wheat;
+    cursor: pointer;
+}
+.perfil a:hover{
+    font-size: 20px;
+}
+.perfil img{
+	width: 125px;
+	border-radius: 50%;
+}
+@font-face {
+    font-family: "susemono";
+    src: url(../fuentes/SUSEMono-Medium.ttf);
+    font-weight: normal;
+}
+.perfil-descripcion{
+    font-family: susemono;
+    font-weight: normal;
+}
+.perfil-formacion, .perfil-experiencia, .perfil-persona, .perfil-habilidades{
+    font-weight: normal;
+}
+
+/* **** Formulario de contacto **** */
+.interactive-part{
+    padding: 5%;
+    display: flex;
+}
+.interactive-box{
+    width: 100%;
+}
+.enlaces{
+    background-color: rgb(62, 62, 62);
+    padding: 4%;
+    border-radius: 15px;
+    align-items: left;
+    display: flex;
+    justify-content: space-evenly;
+}
+.interactive-box .enlaces a{
+    text-decoration: none;
+    color: rgb(67, 86, 34);
+    font-weight: bold;
+    font-size: 19px;
+    background-color: darkseagreen;
+    border-radius: 15px;
+}
+.form-box{
+    display: none;
+    background-color: lightblue;
+    border-radius: 15px;
+    text-align: center;
+}
+.form-box input[type=text], input[type=correo], textarea{
+    border: none;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+}
+.form-box input[type=submit]{
+    border: none;
+    border-radius: 15px;
+    background-color: darkseagreen;
+    color: darkolivegreen;
+    font-weight: bold;
+    font-size: 18px;
+}
+.form-box input[type=submit]:hover{
+    background-color: rgb(108, 165, 108);
+}
+.form-box input[type=text]:focus, input[type=correo]:focus, textarea:focus{
+    border: 2px solid darkcyan;
+}
+.form-box textarea{
+    resize: none;
+    padding: 3%;
+    height: 250px;
+
+}
+#form-box:target{
+    display: block;
+}
+
+/* **** Contenido **** */
+.folder-box video{
+    border-radius: 15px;
+}
+.folder-box{
+    display: none;
+    text-align: center;
+}
+#folder-box:target{
+    display: block;
+}
+
+/* **** Historia **** */
+
+.story-box{
+    display: none;
+    background-color: rgba(112, 128, 144, 0.85);
+    /* background-color: slategray;  */
+    color: black;
+    border-radius: 15px;
+    margin-top: 10%;
+    padding: 3%;
+}
+#story-box:target{
+    display: block;
+}
+body:has(#story-box:target){
+    background: url(../imagenes/fondo-flores.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.interactive-box:has(#story-box:target) > .enlaces{
+    background-color: rgba(62, 62, 62,0.9);
+}
+
+/* **** TELEFONOS ****   */
+@media screen and (max-width: 1068px){
+    body > * :not(.error-temporal, #sad-face){
+        display: none;
+    }
+	body{
+		background-color: #087CD8;
+	}
+    .error-temporal{
+        padding: 5%;
+        font-size: 25px;
+        font-family: verdana;
+    }
+    #sad-face{
+        font-size: 60px;
+        font-family: verdana;
+        padding: 10%;
+        padding-top: 7%;
+        border: 3px solid black;
+        margin-right: 60%;
+        margin-left: 10%;
+        margin-top: 4%;
+        font-weight: bold;
+        border-radius: 10%;
+    }
+}
+
+/* **** PC's ****   */
+@media screen and (min-width: 1069px){
+    .error-temporal, #sad-face{
+        display: none;
+    }
+	.perfil{
+        padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 5%;
+	}
+    .perfil img{
+        margin-left: 25%;
+    }
+    #perfil-contenido{
+        padding-top: 10%;
+    }
+    .form-box{
+        margin-top: 10%;
+        padding: 5%;
+    }
+    .form-box input{
+        width: 80%;
+        height: 5%;
+        padding: 2.5%;
+    }
+    .form-box textarea{
+        width: 78%;
+    }
+    .form-box input[type=text]:focus, input[type=correo]:focus, textarea:focus{
+        width: 80%;
+    }
+    .interactive-box .enlaces a{
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+    .form-box input[type=submit]{
+        width: 85%;
+    }
+    .form-box input[type=submit]:hover{
+        padding: 3%;
+        width: 87%;
+    }
+    .form-box input[type=text]:focus, input[type=correo]:focus, textarea:focus{
+        border: 2px solid darkcyan;
+        width: 80%;
+    }
+    .folder-box audio{
+        margin-top: 10%;
+        width: 100%;
+    }
+    .folder-box video{
+        margin-top: 5%;
+        width: 100%;
+    }
+}
